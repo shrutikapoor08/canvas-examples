@@ -1,0 +1,27 @@
+body {
+    background: black;
+    font-family: Helvetica;
+    font-size: 18px;
+
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column;
+    font-size: 3rem;
+    color: yellow;
+    height: 100vh;
+}
+
+a {
+   color: yellow;
+   text-decoration: none;
+  
+}
+
+a:hover {
+    text-decoration: underline;
+   }
+

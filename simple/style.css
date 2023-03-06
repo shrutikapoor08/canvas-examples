@@ -1,0 +1,11 @@
+body {
+    background: black;
+    font-family: Helvetica;
+}
+.welcome-text {
+    color: white;
+    font-size: 48px;
+}
+.hidden {
+    visibility: hidden;
+}
