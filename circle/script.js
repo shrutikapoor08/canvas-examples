@@ -1,26 +1,24 @@
 canvas = document.getElementById("circle-canvas");
-ctx = canvas.getContext("2d");
+context = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function drawCircle(event) {
-  console.log("drawing");
-
   document.getElementById("info").classList.add("hidden");
 
-  const centerX = event.pageX;
-  const centerY = event.pageY;
+  const x = event.pageX;
+  const y = event.pageY;
   const radius = 20;
+  //arc
+  context.beginPath();
+  context.arc(x, y, radius, 0, 2 * Math.PI, false);
 
-  ctx.fillStyle = "red";
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-  ctx.fill();
+  context.fillStyle = "red";
+  context.fill();
 
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = "red";
-  ctx.stroke();
+  context.strokeStyle = "red";
+  context.stroke();
 }
 
 function onResize(event) {
