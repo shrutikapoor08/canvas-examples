@@ -9,9 +9,9 @@ class Particle {
   constructor(x = 0, y = 0) {
     this.x = x;
     this.y = y;
-    this.radius = Math.random() * 50;
+    this.radius = Math.random() * 40;
     this.dx = Math.random() * 3;
-    this.dy = Math.random() * 7;
+    this.dy = Math.random() * 3;
     this.hue = 200;
   }
 
@@ -45,11 +45,11 @@ class Particle {
   }
 }
 
-const handleDrawCircle = (event) => {
-  a = event.pageX;
-  b = event.pageY;
+const handleDrawCircle = (a, b) => {
+  //   a = event.pageX;
+  //   b = event.pageY;
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 10; i++) {
     const particle = new Particle(a, b);
     particleArray.push(particle);
   }
@@ -68,7 +68,26 @@ const animate = () => {
 
 animate();
 
-canvas.addEventListener("click", handleDrawCircle);
+let isDrawing;
+
+canvas.addEventListener("mousedown", (event) => {
+  isDrawing = true;
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (isDrawing) {
+    handleDrawCircle(e.offsetX, e.offsetY);
+  }
+});
+
+canvas.addEventListener("mouseup", (event) => {
+  console.log("handling drag end", event.offsetX);
+  isDrawing = false;
+});
+
+canvas.addEventListener("click", (event) =>
+  handleDrawCircle(event.pageX, event.pageY)
+);
 canvas.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
