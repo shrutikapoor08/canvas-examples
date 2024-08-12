@@ -40,7 +40,7 @@ const animate = () => {
 };
 
 function createParticles(x, y) {
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 100; i++) {
     particlesArray.push(new Particle(x, y));
   }
 }
@@ -63,11 +63,10 @@ const moveParticlesTo = (destX, destY) => {
   });
 };
 
-canvas.addEventListener("mousemove", function (event) {
-  createParticles(event.x, event.y);
-});
+canvas.addEventListener("mousemove", function (event) {});
 
 canvas.addEventListener("click", function (event) {
+  createParticles(event.x, event.y);
   moveParticlesTo(event.x, event.y);
 });
 

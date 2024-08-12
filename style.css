@@ -1,7 +1,7 @@
 body {
     background: black;
     font-family: Helvetica;
-    font-size: 18px;
+    font-size: 4.5em;
 
 }
 
@@ -9,19 +9,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-flow: column;
-    font-size: 3rem;
-    color: yellow;
+    flex-flow: row;
+    color: cyan;
     height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
 }
 
 a {
-   color: yellow;
+    color: purple;
+display: block;
+padding: 40px;
    text-decoration: none;
+   background: white;
+   border-radius: 20px;
+   font-weight: lighter;
   
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    
    }
 

@@ -1,0 +1,21 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  background: black;
+}
+
+.welcome-text {
+  display: flex;
+  color: white;
+  font-size: 64px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: Helvetica;
+}
+
+.hidden {
+  visibility: hidden;
+}
