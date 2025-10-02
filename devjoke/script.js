@@ -32,7 +32,7 @@ class Particle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
 
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "purple";
     ctx.fill();
   }
 
@@ -85,7 +85,7 @@ function connect() {
           (particleArray[a].y - particleArray[b].y);
       if (distance < (canvas.width / 7) * (canvas.height / 7)) {
         opacityValue = 1 - distance / 10000;
-        ctx.strokeStyle = "rgba(0,0,0," + opacityValue + ")";
+        ctx.strokeStyle = "rgba(90,34,139," + opacityValue + ")";
         ctx.beginPath();
         ctx.lineWidth = 5;
         ctx.moveTo(particleArray[a].x, particleArray[a].y);
@@ -99,7 +99,7 @@ function connect() {
 // create particle array
 function init() {
   particleArray = [];
-  let numberOfParticles = (canvas.height * canvas.width) / 1000;
+  let numberOfParticles = (canvas.height * canvas.width) / 800;
   for (let i = 0; i < numberOfParticles; i++) {
     let size = Math.random() * 20 + 1;
     let x = Math.random() * (innerWidth - size * 2 - size * 2) + size * 2;

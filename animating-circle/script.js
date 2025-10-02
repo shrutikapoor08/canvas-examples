@@ -16,19 +16,19 @@ const drawCircle = (x, y) => {
   context.beginPath();
   context.arc(x, y, radius, 0, 2 * Math.PI, false);
 
-  context.fillStyle = "red";
+  context.fillStyle = "purple";
   context.fill();
 
-  context.strokeStyle = "red";
+  context.strokeStyle = "purple";
   context.stroke();
 };
 
 const handleCircle = (event) => {
   a = event.pageX;
   b = event.pageY;
-  dx = Math.random() * 10;
-  dy = Math.random() * 10;
-  radius = Math.random() * 50;
+  dx = Math.random() * 40;
+  dy = Math.random() * 70;
+  radius = Math.random() * 50 + 50;
 };
 
 const animate = () => {

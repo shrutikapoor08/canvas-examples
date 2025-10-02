@@ -13,8 +13,12 @@ function drawRect(event) {
     const x = event.pageX;
     const y = event.pageY;
 
+    ctx.beginPath();
+    ctx.strokeStyle = "red";
     ctx.fillStyle = "red";
-    ctx.fillRect(x, y, 5, 5);
+    ctx.arc(x, y, 3, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
   }
 }
 function mouseMove(event) {

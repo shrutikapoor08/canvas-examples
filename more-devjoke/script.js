@@ -22,16 +22,16 @@ window.onresize = function (event) {
 const mouse = { x: 0, y: 0, down: false };
 
 const renderEmojis = () => {
-  const emojiSize = Math.random() * 132;
+  const emojiSize = Math.floor(Math.random() * (200 - 20 + 1)) + 30;
 
   context.textAlign = "center";
   context.textBaseline = "middle";
 
   // draw the emoji
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 60; i++) {
     context.font = emojiSize + "px bold serif";
     context.fillText(
-      "😜",
+      "\u{1F606}",
       Math.random() * canvas.width,
       Math.random() * canvas.height
     );
@@ -44,27 +44,29 @@ function draw() {
     if (counter === 0) clearCanvas();
     var d = distance(position, mouse);
     var letter = devjoke[counter];
-    const fontSize = 48;
+    const fontSize = 130;
     var stepSize = fontSize;
 
     if (d > stepSize) {
       var angle = Math.atan2(mouse.y - position.y, mouse.x - position.x);
 
       context.save();
-      context.font = fontSize + "px serif";
+      context.font = fontSize + "px Helvetica";
       context.translate(position.x, position.y);
-      context.fillStyle = `hsl(${hue}, 100%, 50%)`;
+      context.fillStyle = `#FFDE59`;
       context.fillText(letter, 0, 0);
       context.restore();
       counter++;
 
-      renderEmojis();
+      // renderEmojis();
       if (counter > devjoke.length - 1) {
         counter = 0;
 
-        renderEmojis();
+        setTimeout(() => {
+          renderEmojis();
+        }, 2000);
         devjoke = getDevjoke();
-        hue = hue + 105;
+        // hue = hue + 105;
         mouse.down = false;
       }
 

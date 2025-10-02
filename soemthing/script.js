@@ -10,9 +10,9 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 8;
-    this.speedX = Math.random() * 3 - 1.5;
-    this.speedY = Math.random() * 3 - 1.5;
+    this.size = Math.random() * 18;
+    this.speedX = Math.random() * 17 - 10;
+    this.speedY = Math.random() * 17 - 10;
     this.color = `hsl(${hue}, 100%, 50%)`;
   }
 

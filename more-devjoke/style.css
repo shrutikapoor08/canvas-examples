@@ -3,19 +3,29 @@ body {
   width: 100%;
   height: 100%;
   cursor: crosshair;
-  background: black;
+  background: #3066C2;
 }
 
 .welcome-text {
   display: flex;
   color: white;
-  font-size: 64px;
+  font-size: 120px;
   width: 100%;
   align-items: center;
   justify-content: center;
   font-family: Helvetica;
+  top: 30%;
+  text-align: center;
+  position: absolute;
+  font-weight: 400;
+  z-index: 10;
+
 }
 
 .hidden {
   visibility: hidden;
+}
+
+canvas {
+  z-index: 20;
 }
